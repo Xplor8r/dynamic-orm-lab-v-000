@@ -56,8 +56,8 @@ class InteractiveRecord
     else
       "'#{value}'"
     end
-    
-      
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys} = #{sql_value}"
+    DB[:conn].execute(sql)
   end
   
 end
