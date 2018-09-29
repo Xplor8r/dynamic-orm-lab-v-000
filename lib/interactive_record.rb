@@ -50,13 +50,13 @@ class InteractiveRecord
   
   def self.find_by(attribute)
     attribute_value = attribute.values
-    sql_value = attribute_value.class
+    sql_value = attribute_value.class.first
     if attribute_value.class.is_a? Integer
       attribute_value
     else
       "'#{attribute_value}'"
     end
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys} = #{sql_value}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = #{sql_value}"
     DB[:conn].execute(sql)
   end
   
