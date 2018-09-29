@@ -55,6 +55,8 @@ class InteractiveRecord
       value
     else
       "'#{value}'"
+    end
+    
       
   end
   
