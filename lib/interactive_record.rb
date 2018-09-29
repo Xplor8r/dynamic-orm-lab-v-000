@@ -51,7 +51,11 @@ class InteractiveRecord
   def self.find_by(attribute)
     attribute_value = attribute.values
     sql_value = attribute_value.class
-    if attribute_value.class.is_
+    if attribute_value.class.is_an_it
+      value
+    else
+      "#{value}"
+      
   end
   
 end
