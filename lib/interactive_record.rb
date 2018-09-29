@@ -49,7 +49,8 @@ class InteractiveRecord
   end
   
   def self.find_by(attribute)
-    attribute_value = attribute.first
+    attribute_value = attribute.values
+    
   end
   
 end
