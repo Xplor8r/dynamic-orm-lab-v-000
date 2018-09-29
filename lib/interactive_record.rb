@@ -51,7 +51,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     attribute_value = attribute.values.first
     sql_value = attribute_value.class
-    if attribute_value.class == Fixnum
+    if attribute_value.class.is_a? Integer
       attribute_value
     else
       "'#{attribute_value}'"
