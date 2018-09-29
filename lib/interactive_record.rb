@@ -54,7 +54,7 @@ class InteractiveRecord
     if attribute_value.class.is_an_it
       value
     else
-      "#{value}"
+      "'#{value}'"
       
   end
   
