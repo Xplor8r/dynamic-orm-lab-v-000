@@ -47,14 +47,8 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
   end
-  
+
   def self.find_by(attribute)
-    attribute_value = attribute.values.first
-    sql_value = attribute_value.class.is_a? Integer ? attribute_value : "'#{attribute_value}'"
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = #{sql_value}"
-    DB[:conn].execute(sql)
-  end
-    def self.find_by(attribute)
     attribute_value = attribute.values.first
     sql_value = attribute_value.class == Fixnum ? attribute_value : "'#{attribute_value}'"
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys.first} = #{sql_value}"
