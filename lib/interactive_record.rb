@@ -52,7 +52,7 @@ class InteractiveRecord
     attribute_value = attribute.values
     sql_value = attribute_value.class
     if attribute_value.class.is_a? Integer
-      value
+      attribute_value
     else
       "'#{value}'"
     end
