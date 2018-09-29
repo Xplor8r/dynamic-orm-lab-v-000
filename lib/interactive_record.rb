@@ -54,7 +54,7 @@ class InteractiveRecord
     if attribute_value.class.is_a? Integer
       attribute_value
     else
-      "'#{value}'"
+      "'#{attribute_value}'"
     end
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys} = #{sql_value}"
     DB[:conn].execute(sql)
